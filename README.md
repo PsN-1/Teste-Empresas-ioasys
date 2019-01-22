@@ -1,3 +1,5 @@
+![N|Solid](logo_ioasys.png)
+
 # README #
 
 Estes documento README tem como objetivo fornecer as informações necessárias para realização do projeto Empresas.
