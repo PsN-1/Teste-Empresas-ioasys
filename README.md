@@ -20,9 +20,9 @@ Estes documento README tem como objetivo fornecer as informações necessárias 
 
 ### Informações Importantes ###
 
-* Layout e recortes disponíveis no Zeplin (http://zeplin.io)
+* Layout e recortes disponíveis no Figma (https://www.figma.com)
+apps+testeios@ioasys.com.br
 teste_ios
-15ioasys86
 
 * Integração disponível a partir de uma collection para Postman (https://www.getpostman.com/apps) disponível neste repositório.
 
