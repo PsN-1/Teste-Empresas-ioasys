@@ -21,8 +21,8 @@ Estes documento README tem como objetivo fornecer as informações necessárias 
 ### Informações Importantes ###
 
 * Layout e recortes disponíveis no Figma (https://www.figma.com)
-usuário(apps+testeios@ioasys.com.br)
-senha(teste_ios)
+usuário(apps+testeandroid@ioasys.com.br)
+senha(teste_android)
 
 * Integração disponível a partir de uma collection para Postman (https://www.getpostman.com/apps) disponível neste repositório.
 
