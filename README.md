@@ -20,9 +20,9 @@ Estes documento README tem como objetivo fornecer as informações necessárias 
 
 ### Informações Importantes ###
 
-* Layout e recortes disponíveis no Figma (https://www.figma.com)
-usuário(apps+testeandroid@ioasys.com.br)
-senha(teste_android)
+* Layout e recortes disponíveis no Figma (http://bit.ly/testeios)
+
+* Você deve fazer um cadastro no Figma para ter acesso ao layout.
 
 * Integração disponível a partir de uma collection para Postman (https://www.getpostman.com/apps) disponível neste repositório.
 
