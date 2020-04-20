@@ -11,10 +11,11 @@ Estes documento README tem como objetivo fornecer as informações necessárias 
 
 ### ESCOPO DO PROJETO ###
 
-* Deve ser criado um aplicativo iOS utilizando Objective C ou Swift com as seguintes especificações:
+* Deve ser criado um aplicativo iOS utilizando Swift com as seguintes especificações:
 * Login e acesso de Usuário já registrado
 	* Para o login usamos padrões OAuth 2.0. Na resposta de sucesso do login a api retornará 3 custom headers (access-token, client, uid);
 	* Para ter acesso as demais APIS precisamos enviar esses 3 custom headers para a API autorizar a requisição;
+* Busca de Empresas
 * Listagem de Empresas
 * Detalhamento de Empresas
 
@@ -34,7 +35,3 @@ Estes documento README tem como objetivo fornecer as informações necessárias 
 * Versão da API: v1
 * Usuário de Teste: testeapple@ioasys.com.br
 * Senha de Teste : 12341234
-
-### Dicas ###
-
-* Temos um framework muito completo que pode te ajudar em tudo: https://github.com/JotaMelo/iOSHelpers-Swift ou https://github.com/JotaMelo/iOSHelpers
