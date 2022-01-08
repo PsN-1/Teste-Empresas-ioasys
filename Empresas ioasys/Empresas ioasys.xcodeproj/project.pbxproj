@@ -18,6 +18,22 @@
 		66450FB6278649E50027707A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66450FB5278649E50027707A /* Coordinator.swift */; };
 		66450FB8278649EF0027707A /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66450FB7278649EF0027707A /* MainCoordinator.swift */; };
 		66450FBB27864B790027707A /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66450FBA27864B790027707A /* Images.swift */; };
+		66450FBD27864C260027707A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66450FBC27864C260027707A /* LoginViewController.swift */; };
+		66450FBF27864C2F0027707A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66450FBE27864C2F0027707A /* LoginView.swift */; };
+		66450FC127864E030027707A /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66450FC027864E030027707A /* GradientView.swift */; };
+		66450FC5278655A20027707A /* WelcomeView.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66450FC4278655A20027707A /* WelcomeView.swift.swift */; };
+		66450FC727865D810027707A /* GenericTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66450FC627865D810027707A /* GenericTextField.swift */; };
+		664F4CA4278937E00029442B /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664F4CA3278937E00029442B /* LoadingViewController.swift */; };
+		664F4CA927893BF60029442B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664F4CA827893BF60029442B /* HomeViewController.swift */; };
+		664F4CAB278940CE0029442B /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664F4CAA278940CE0029442B /* HomeViewCell.swift */; };
+		665281342789C52F00C74184 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665281332789C52F00C74184 /* HomeView.swift */; };
+		665281362789C5A200C74184 /* HomeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665281352789C5A200C74184 /* HomeCollectionView.swift */; };
+		665281382789DEDD00C74184 /* CellGradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665281372789DEDD00C74184 /* CellGradientBackground.swift */; };
+		6652813B2789EB4700C74184 /* CompanyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6652813A2789EB4700C74184 /* CompanyDetailViewController.swift */; };
+		6652813D2789EBB600C74184 /* CompanyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6652813C2789EBB600C74184 /* CompanyDetailView.swift */; };
+		6660808A27885A1B008C3FF7 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6660808927885A1B008C3FF7 /* LoginModel.swift */; };
+		6660808C2788673E008C3FF7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6660808B2788673E008C3FF7 /* LoginViewModel.swift */; };
+		666898452787D53A003CE1AF /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666898442787D53A003CE1AF /* ApiClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +69,22 @@
 		66450FB5278649E50027707A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		66450FB7278649EF0027707A /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		66450FBA27864B790027707A /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		66450FBC27864C260027707A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		66450FBE27864C2F0027707A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		66450FC027864E030027707A /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		66450FC4278655A20027707A /* WelcomeView.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift.swift; sourceTree = "<group>"; };
+		66450FC627865D810027707A /* GenericTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTextField.swift; sourceTree = "<group>"; };
+		664F4CA3278937E00029442B /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		664F4CA827893BF60029442B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		664F4CAA278940CE0029442B /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
+		665281332789C52F00C74184 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		665281352789C5A200C74184 /* HomeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionView.swift; sourceTree = "<group>"; };
+		665281372789DEDD00C74184 /* CellGradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellGradientBackground.swift; sourceTree = "<group>"; };
+		6652813A2789EB4700C74184 /* CompanyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailViewController.swift; sourceTree = "<group>"; };
+		6652813C2789EBB600C74184 /* CompanyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailView.swift; sourceTree = "<group>"; };
+		6660808927885A1B008C3FF7 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		6660808B2788673E008C3FF7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		666898442787D53A003CE1AF /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				66450F7E278649350027707A /* Empresas ioasys */,
-				66450F8D278649390027707A /* Info.plist */,
 				66450F95278649390027707A /* Empresas ioasysTests */,
 				66450F9F278649390027707A /* Empresas ioasysUITests */,
 				66450F7D278649350027707A /* Products */,
@@ -104,7 +135,9 @@
 		66450F7E278649350027707A /* Empresas ioasys */ = {
 			isa = PBXGroup;
 			children = (
+				66450F8D278649390027707A /* Info.plist */,
 				66450FB1278649790027707A /* Coordinators */,
+				6660808827885A07008C3FF7 /* Models */,
 				66450FB22786497F0027707A /* Networking */,
 				66450FB0278649670027707A /* Supporting */,
 				66450FB32786498A0027707A /* Utils */,
@@ -133,8 +166,12 @@
 		66450FAF278649600027707A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				66450FB927864AE90027707A /* Login */,
+				665281392789EB2C00C74184 /* CompanyDetail */,
+				664F4CA527893B870029442B /* Home */,
+				664F4CA2278937CF0029442B /* Loading */,
+				66450FC32786557D0027707A /* Components */,
 				66450F83278649350027707A /* ViewController.swift */,
+				66450FB927864AE90027707A /* Login */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -162,6 +199,7 @@
 		66450FB22786497F0027707A /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				666898442787D53A003CE1AF /* ApiClient.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -177,8 +215,58 @@
 		66450FB927864AE90027707A /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				66450FBC27864C260027707A /* LoginViewController.swift */,
+				6660808B2788673E008C3FF7 /* LoginViewModel.swift */,
+				66450FBE27864C2F0027707A /* LoginView.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		66450FC32786557D0027707A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				66450FC027864E030027707A /* GradientView.swift */,
+				66450FC4278655A20027707A /* WelcomeView.swift.swift */,
+				66450FC627865D810027707A /* GenericTextField.swift */,
+				665281372789DEDD00C74184 /* CellGradientBackground.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		664F4CA2278937CF0029442B /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				664F4CA3278937E00029442B /* LoadingViewController.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		664F4CA527893B870029442B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				664F4CA827893BF60029442B /* HomeViewController.swift */,
+				664F4CAA278940CE0029442B /* HomeViewCell.swift */,
+				665281332789C52F00C74184 /* HomeView.swift */,
+				665281352789C5A200C74184 /* HomeCollectionView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		665281392789EB2C00C74184 /* CompanyDetail */ = {
+			isa = PBXGroup;
+			children = (
+				6652813A2789EB4700C74184 /* CompanyDetailViewController.swift */,
+				6652813C2789EBB600C74184 /* CompanyDetailView.swift */,
+			);
+			path = CompanyDetail;
+			sourceTree = "<group>";
+		};
+		6660808827885A07008C3FF7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6660808927885A1B008C3FF7 /* LoginModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,12 +399,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6652813B2789EB4700C74184 /* CompanyDetailViewController.swift in Sources */,
+				66450FBD27864C260027707A /* LoginViewController.swift in Sources */,
 				66450FB6278649E50027707A /* Coordinator.swift in Sources */,
+				664F4CA4278937E00029442B /* LoadingViewController.swift in Sources */,
+				665281362789C5A200C74184 /* HomeCollectionView.swift in Sources */,
 				66450FBB27864B790027707A /* Images.swift in Sources */,
+				665281382789DEDD00C74184 /* CellGradientBackground.swift in Sources */,
 				66450F84278649350027707A /* ViewController.swift in Sources */,
 				66450F80278649350027707A /* AppDelegate.swift in Sources */,
+				6660808A27885A1B008C3FF7 /* LoginModel.swift in Sources */,
+				6660808C2788673E008C3FF7 /* LoginViewModel.swift in Sources */,
 				66450FB8278649EF0027707A /* MainCoordinator.swift in Sources */,
+				665281342789C52F00C74184 /* HomeView.swift in Sources */,
+				664F4CA927893BF60029442B /* HomeViewController.swift in Sources */,
+				66450FC5278655A20027707A /* WelcomeView.swift.swift in Sources */,
+				66450FBF27864C2F0027707A /* LoginView.swift in Sources */,
 				66450F82278649350027707A /* SceneDelegate.swift in Sources */,
+				6652813D2789EBB600C74184 /* CompanyDetailView.swift in Sources */,
+				66450FC727865D810027707A /* GenericTextField.swift in Sources */,
+				664F4CAB278940CE0029442B /* HomeViewCell.swift in Sources */,
+				66450FC127864E030027707A /* GradientView.swift in Sources */,
+				666898452787D53A003CE1AF /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
