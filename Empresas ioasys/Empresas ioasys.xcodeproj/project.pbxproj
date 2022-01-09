@@ -26,7 +26,6 @@
 		664F4CA927893BF60029442B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664F4CA827893BF60029442B /* HomeViewController.swift */; };
 		664F4CAB278940CE0029442B /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664F4CAA278940CE0029442B /* HomeViewCell.swift */; };
 		664FC34F278B340D00177288 /* TextFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664FC34E278B340D00177288 /* TextFieldType.swift */; };
-		664FC353278B36A900177288 /* LoginViewBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664FC352278B36A900177288 /* LoginViewBackground.swift */; };
 		664FC356278B3C2A00177288 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664FC355278B3C2A00177288 /* Colors.swift */; };
 		664FC358278B523600177288 /* HomeNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664FC357278B523600177288 /* HomeNavigationBar.swift */; };
 		665281342789C52F00C74184 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665281332789C52F00C74184 /* HomeView.swift */; };
@@ -88,7 +87,6 @@
 		664F4CA827893BF60029442B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		664F4CAA278940CE0029442B /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		664FC34E278B340D00177288 /* TextFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldType.swift; sourceTree = "<group>"; };
-		664FC352278B36A900177288 /* LoginViewBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewBackground.swift; sourceTree = "<group>"; };
 		664FC355278B3C2A00177288 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		664FC357278B523600177288 /* HomeNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationBar.swift; sourceTree = "<group>"; };
 		665281332789C52F00C74184 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -290,7 +288,6 @@
 			children = (
 				66450FC027864E030027707A /* GradientView.swift */,
 				66450FC4278655A20027707A /* WelcomeView.swift.swift */,
-				664FC352278B36A900177288 /* LoginViewBackground.swift */,
 			);
 			path = LoginViewBackground;
 			sourceTree = "<group>";
@@ -503,7 +500,6 @@
 				66450FC127864E030027707A /* GradientView.swift in Sources */,
 				664FC34F278B340D00177288 /* TextFieldType.swift in Sources */,
 				666898452787D53A003CE1AF /* ApiClient.swift in Sources */,
-				664FC353278B36A900177288 /* LoginViewBackground.swift in Sources */,
 				6652813F278A236B00C74184 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
