@@ -1,10 +1,21 @@
 import UIKit
 
 class HomeViewCell: UICollectionViewCell {
+    struct HomeViewCellData {
+        var companyImage: String
+        var companyName: String
+    }
+    
+    func setup(with data: HomeViewCellData) {
+        companyLabel.text = data.companyName
+        companyImage.load(url: data.companyImage)
+    }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
     }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -37,7 +48,7 @@ class HomeViewCell: UICollectionViewCell {
     lazy var companyImage: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.image = UIImage(named: "companyImage")
+        view.contentMode = .scaleAspectFill
         view.backgroundColor = .red
         view.layer.cornerRadius = 16
         view.clipsToBounds = true
@@ -50,7 +61,7 @@ class HomeViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14, weight: .light)
         label.text = "McDonalds"
-        label.textColor = UIColor(red: 0.575, green: 0.575, blue: 0.575, alpha: 1)
+        label.textColor = Colors.lightGrayTitleColor
         label.textAlignment = .center
         label.backgroundColor = .white
         label.layer.cornerRadius = 16
@@ -59,5 +70,3 @@ class HomeViewCell: UICollectionViewCell {
         return label
     }()
 }
-
-

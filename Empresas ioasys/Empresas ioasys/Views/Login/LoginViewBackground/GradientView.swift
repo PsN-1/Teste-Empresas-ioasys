@@ -1,7 +1,6 @@
 import UIKit
 
 class GradientView: UIView {
-    
     override init(frame: CGRect = .zero){
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
@@ -14,7 +13,9 @@ class GradientView: UIView {
     }
     
     lazy var backgroundImage = buildBackgroundImage()
-    
+}
+
+extension GradientView {
     func setupView() {
         addSubview(backgroundImage)
         NSLayoutConstraint.activate([
@@ -22,13 +23,10 @@ class GradientView: UIView {
             backgroundImage.leadingAnchor.constraint(equalTo: leadingAnchor),
             backgroundImage.trailingAnchor.constraint(equalTo: trailingAnchor),
             backgroundImage.bottomAnchor.constraint(equalTo: bottomAnchor),
-            
         ])
-        
     }
     
-    func setupGradientView() {
-        
+    func setupGradientView(){
         let view = UILabel()
         view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
         view.backgroundColor = .white
@@ -64,21 +62,5 @@ extension GradientView {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         return imageView
-    }
-    
-    func buildGenericLabel() -> UILabel {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .white
-        label.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        
-        return label
-    }
-    
-    func buildTitle() -> UILabel {
-        let label = buildGenericLabel()
-        label.font = UIFont(name: "Gilroy-Bold", size: 40)
-        label.text = "Boas vindas,"
-        return label
     }
 }

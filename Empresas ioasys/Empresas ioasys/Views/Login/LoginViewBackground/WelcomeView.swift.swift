@@ -13,7 +13,9 @@ class WelcomeView: UIView {
     
     lazy var title = buildTitle()
     lazy var subTitle = buildSubTitle()
-    
+}
+
+extension WelcomeView {
     func setupView() {
         addSubview(title)
         addSubview(subTitle)
@@ -30,7 +32,6 @@ class WelcomeView: UIView {
         ])
     }
 }
-
 
 extension WelcomeView {
     func buildGenericLabel() -> UILabel {
