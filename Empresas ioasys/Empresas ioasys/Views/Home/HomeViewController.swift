@@ -2,34 +2,21 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UISearchBarDelegate, UISearchControllerDelegate {
 
     let homeView = HomeView()
     
-    var viewModel = LoginViewModel()
-    var onSelectedCompany: (() -> Void)?
+    var viewModel = HomeViewModel()
+    var onSelectedCompany: ((Enterprise) -> Void)?
     
     override func loadView() {
         self.view = homeView
         setupCollectionView()
-        setupTitle()
-    }
-    
-    func setupTitle() {
-        let label = UILabel()
-        label.backgroundColor = .clear
-        label.numberOfLines = 0
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.textAlignment = .center
-        label.textColor = .black
-        label.lineBreakMode = .byWordWrapping
-        label.text = "Pesquise por uma empresa"
-        
-        navigationItem.titleView = label
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupDismissibleKeyboard()
     }
 }
 
@@ -46,16 +33,18 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        viewModel.getSectionsCount()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        return cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? HomeViewCell
+        cell?.setup(with: viewModel.getCellDataFor(index: indexPath.row))
+        
+        return cell ?? UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        onSelectedCompany?()
+        onSelectedCompany?(viewModel.getSelectedCompany(at: indexPath.row))
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -63,4 +52,24 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         super.viewWillTransition(to: size, with: coordinator)
     }
 }
+
+extension HomeViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderColor = Colors.purpleLayerBorder.cgColor
+    }
     
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        textField.layer.borderColor = UIColor.black.cgColor
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func setupDismissibleKeyboard() {
+        homeView.navigationBar.searchBar.delegate = self
+    }
+}
+
