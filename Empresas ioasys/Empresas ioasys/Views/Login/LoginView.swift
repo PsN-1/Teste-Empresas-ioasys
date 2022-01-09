@@ -15,27 +15,10 @@ class LoginView: UIView {
     lazy var companyLogo = buildCompanyLogo()
     lazy var welcomeView = WelcomeView()
     
-    lazy var field1: GenericTextField = {
-        let field1 = GenericTextField()
-        field1.setPlaceHolderTo("Email")
-        return field1
-    }()
+    lazy var field1 = GenericTextField(ofType: .email)
+    lazy var field2 = GenericTextField(ofType: .password)
     
-    lazy var field2: GenericTextField = {
-        let field2 = GenericTextField()
-        field2.setPlaceHolderTo("Senha")
-        return field2
-    }()
-    
-    lazy var button: UIButton = {
-        let button = UIButton(type: .system)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("ENTRAR", for: .normal)
-        button.backgroundColor = .gray
-        button.setTitleColor(.white, for: .normal)
-        button.layer.cornerRadius = 25
-        return button
-    }()
+    lazy var button = buildLoginButton()
     
     lazy var textView: UILabel = {
         let textView = UILabel()
@@ -108,7 +91,6 @@ class LoginView: UIView {
     }
 }
 
-
 extension LoginView {
     func buildCompanyLogo() -> UIImageView{
         let view = UIImageView()
@@ -116,5 +98,15 @@ extension LoginView {
         view.image = Images.companyLogo
         view.contentMode = .scaleToFill
         return view
+    }
+    
+    func buildLoginButton() -> UIButton {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("ENTRAR", for: .normal)
+        button.backgroundColor = .gray
+        button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 25
+        return button
     }
 }

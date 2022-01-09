@@ -2,9 +2,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     let loginView = LoginView()
-    
     var viewModel = LoginViewModel()
-    var onLoginSuccessful: (() -> Void)?
     
     override func loadView() {
         self.view = loginView
@@ -13,22 +11,19 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationController?.navigationBar.isHidden = true
         setupDismissibleKeyboard()
-        
         loginView.button.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
     }
     
     @objc func loginButtonPressed() {
         view.endEditing(true)
-//        viewModel.tryLogin()
-        onLoginSuccessful?()
+        viewModel.tryLogin()
     }
 }
 
 extension LoginViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.layer.borderColor = UIColor(red: 0.598, green: 0.294, blue: 0.742, alpha: 1).cgColor
+        textField.layer.borderColor = Colors.purpleLayerBorder.cgColor
     }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
@@ -47,17 +42,13 @@ extension LoginViewController: UITextFieldDelegate {
             
         default: textField.resignFirstResponder()
         }
+        
         return true
     }
     
     func setupDismissibleKeyboard() {
         loginView.field1.delegate = self
-        loginView.field1.returnKeyType = .next
-        loginView.field1.keyboardType = .emailAddress
-        
         loginView.field2.delegate = self
-        loginView.field2.returnKeyType = .go
-        loginView.field2.isSecureTextEntry = true
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
