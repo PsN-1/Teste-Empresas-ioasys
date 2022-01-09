@@ -1,6 +1,7 @@
 import UIKit
 
 class LoadingViewController: UIViewController {
+    var viewModel = LoadingViewModel()
     
     lazy var activityIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView()
@@ -25,5 +26,6 @@ class LoadingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        viewModel.getCompaniesData()
     }
 }
