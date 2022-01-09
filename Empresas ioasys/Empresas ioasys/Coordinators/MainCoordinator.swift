@@ -9,29 +9,39 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
+        navigationController.navigationBar.isHidden = true
         goToLogin()
     }
     
     func goToLogin() {
         let viewController = LoginViewController()
-        viewController.onLoginSuccessful = goToHome
+        viewController.viewModel.onLoginSuccessful = goToLoading
         navigationController.show(viewController, sender: self)
     }
     
     func goToLoading() {
         let viewController = LoadingViewController()
+        viewController.viewModel.onLoadingComplete = { companies in
+            self.goToHome(with: companies)
+        }
         navigationController.show(viewController, sender: self)
     }
     
-    func goToHome() {
+    func goToHome(with companies: [Enterprise]) {
         let viewController = HomeViewController()
-        viewController.onSelectedCompany = goToCompanyDetail
-        navigationController.navigationBar.isHidden = false
+        viewController.onSelectedCompany = { company in
+            self.goToCompanyDetail(for: company)
+        }
+        viewController.viewModel.companiesData = companies
         navigationController.show(viewController, sender: self)
     }
     
-    func goToCompanyDetail() {
+    func goToCompanyDetail(for company: Enterprise) {
         let viewController = CompanyDetailViewController()
+        viewController.viewModel.company = company
+        viewController.onBackButtonPressed = {
+            self.navigationController.popViewController(animated: true)
+        }
         navigationController.show(viewController, sender: self)
     }
     
