@@ -2,7 +2,14 @@ import Foundation
 
 extension String {
     func removeDetails() -> String {
-        return trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        return trimmingCharacters(in: .whitespacesAndNewlines)
+            .lowercased()
+            .removeSpecialCharsFromString()
+    }
+    
+    private func removeSpecialCharsFromString() -> String {
+        let okayChars = Set("abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLKMNOPQRSTUVWXYZ1234567890")
+        return self.filter {okayChars.contains($0) }
     }
     
     func isNumbersOnly() -> Bool {
