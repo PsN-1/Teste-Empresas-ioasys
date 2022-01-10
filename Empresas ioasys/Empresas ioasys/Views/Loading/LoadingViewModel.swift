@@ -9,7 +9,7 @@ class LoadingViewModel {
     func getAllCompaniesData() {
         searchHandler.getAllCompanies { companyData in
             DispatchQueue.main.async {
-                self.companies = companyData?.enterprises
+                self.companies = companyData.enterprises
                 self.getImagesForCompanies()
             }
         }

@@ -4,6 +4,9 @@ struct EnterpriseModel: Codable {
     let enterprises: [Enterprise]
 }
 
+struct SingleEnterpriseModel: Codable {
+    let enterprise: Enterprise
+}
 struct Enterprise: Codable {
     let id: Int
     let name, photo, description: String

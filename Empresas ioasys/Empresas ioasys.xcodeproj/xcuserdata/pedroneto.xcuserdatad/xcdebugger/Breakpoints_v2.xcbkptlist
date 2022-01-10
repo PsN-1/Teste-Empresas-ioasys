@@ -78,8 +78,8 @@
             filePath = "Empresas ioasys/Networking/ApiRequest.swift.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "buildURL(url:withParams:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -97,7 +97,7 @@
             startingLineNumber = "19"
             endingLineNumber = "19"
             landmarkName = "getImagesForCompanies()"
-            landmarkType = "7">
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
