@@ -26,6 +26,6 @@ class LoadingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        viewModel.getCompaniesData()
+        viewModel.getAllCompaniesData()
     }
 }

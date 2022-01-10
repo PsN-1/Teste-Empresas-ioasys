@@ -2,13 +2,14 @@ import Foundation
 
 class LoadingViewModel {
     let apiClient = ApiClient()
+    private let searchHandler = SearchHandler()
     var companies: [Enterprise]?
     var onLoadingComplete: (([Enterprise]) -> Void)?
     
-    func getCompaniesData() {
-        apiClient.doGet { data in
+    func getAllCompaniesData() {
+        searchHandler.getAllCompanies { companyData in
             DispatchQueue.main.async {
-                self.companies = data.enterprises
+                self.companies = companyData?.enterprises
                 self.getImagesForCompanies()
             }
         }
