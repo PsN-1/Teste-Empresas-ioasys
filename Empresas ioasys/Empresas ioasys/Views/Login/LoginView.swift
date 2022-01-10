@@ -17,26 +17,10 @@ class LoginView: UIView {
     
     lazy var emailField = GenericTextField(ofType: .email)
     lazy var passwordField = GenericTextField(ofType: .password)
-    
     lazy var loginButton = buildLoginButton()
-    
-    lazy var textView: UILabel = {
-        let textView = UILabel()
-        textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.text = "Digite seus dados para continuar"
-        textView.font = UIFont.boldSystemFont(ofSize: 16)
-        textView.backgroundColor = .white
-        textView.textColor = .black
-        return textView
-    }()
-    
-    lazy var loginView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
-
-        return view
-    }()
+    lazy var textView = buildTextView()
+    lazy var loginView = buildLoginView()
+    lazy var activityIndicator = buildActivityIndicator()
     
     func setupView() {
         addSubview(gradientView)
@@ -48,6 +32,8 @@ class LoginView: UIView {
         addSubview(emailField)
         addSubview(passwordField)
         addSubview(loginButton)
+        
+        addSubview(activityIndicator)
 
         NSLayoutConstraint.activate([
             gradientView.topAnchor.constraint(equalTo: topAnchor),
@@ -86,7 +72,10 @@ class LoginView: UIView {
             loginButton.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 30),
             loginButton.leadingAnchor.constraint(equalTo: loginView.leadingAnchor, constant: 24),
             loginButton.trailingAnchor.constraint(equalTo: loginView.trailingAnchor, constant: -24),
-            loginButton.heightAnchor.constraint(equalToConstant: 48)
+            loginButton.heightAnchor.constraint(equalToConstant: 48),
+            
+            activityIndicator.centerXAnchor.constraint(equalTo: loginView.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: loginView.centerYAnchor),
         ])
     }
 }
@@ -108,5 +97,32 @@ extension LoginView {
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 25
         return button
+    }
+    
+    func buildTextView() -> UILabel {
+        let textView = UILabel()
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.text = "Digite seus dados para continuar"
+        textView.font = UIFont.boldSystemFont(ofSize: 16)
+        textView.backgroundColor = .white
+        textView.textColor = .black
+        return textView
+    }
+    
+    func buildLoginView() -> UIView {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
+        return view
+    }
+    
+    func buildActivityIndicator() -> UIActivityIndicatorView {
+        let indicator = UIActivityIndicatorView()
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.style = .large
+        indicator.startAnimating()
+        indicator.color = .black
+        indicator.isHidden = true
+        return indicator
     }
 }

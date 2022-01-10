@@ -13,12 +13,12 @@ class LoginViewController: UIViewController {
 
         setupDismissibleKeyboard()
         setupLoginButton()
+        setupActivityIndicator()
     }
     
     @objc func loginButtonPressed() {
         view.endEditing(true)
         if validButton() {
-            loginView.loginButton.isEnabled = false
             viewModel.login = loginView.emailField.text ?? ""
             viewModel.password = loginView.passwordField.text ?? ""
             viewModel.tryLogin()
@@ -117,10 +117,18 @@ extension LoginViewController {
             
             let alertController = GenericAlertController.presentWith(
                 title: "Erro ao realizar login",
-                message: "Endereço de email ou senha inválida",
+                message: "Endereço de email ou senha inválida, por gentileza verificar.",
                 actionTitle: "Tentar Novamente"
             )
             self.present(alertController, animated: true)
+        }
+    }
+}
+
+extension LoginViewController {
+    func setupActivityIndicator() {
+        viewModel.showLoadingIndicator = { shouldShow in
+            self.loginView.activityIndicator.isHidden = !shouldShow
         }
     }
 }
