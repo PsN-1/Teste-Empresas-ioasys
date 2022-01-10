@@ -12,31 +12,54 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         setupDismissibleKeyboard()
-        loginView.button.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
+        setupLoginButton()
     }
     
     @objc func loginButtonPressed() {
         view.endEditing(true)
-        viewModel.tryLogin()
+        if validButton() {
+            loginView.loginButton.isEnabled = false
+            viewModel.login = loginView.emailField.text ?? ""
+            viewModel.password = loginView.passwordField.text ?? ""
+            viewModel.tryLogin()
+        }
     }
 }
 
 extension LoginViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderColor = Colors.purpleLayerBorder.cgColor
+        textField.textColor = .black
     }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         textField.layer.borderColor = UIColor.black.cgColor
     }
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        shouldEnableButton()
+    }
+    
+    func shouldEnableButton() {
+        if validButton(){
+            loginView.loginButton.isEnabled = true
+            loginView.loginButton.backgroundColor = Colors.darkPurpleButton
+        } else {
+            loginView.loginButton.isEnabled = false
+            loginView.loginButton.backgroundColor = .gray
+        }
+    }
+    
+    func validButton() -> Bool {
+        !(loginView.emailField.text?.isEmpty ?? true) && !(loginView.passwordField.text?.isEmpty ?? true)
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
             
-        case loginView.field1:
-            loginView.field2.becomeFirstResponder()
+        case loginView.emailField:
+            loginView.passwordField.becomeFirstResponder()
             
-        case loginView.field2:
+        case loginView.passwordField:
             textField.resignFirstResponder()
             loginButtonPressed()
             
@@ -47,8 +70,8 @@ extension LoginViewController: UITextFieldDelegate {
     }
     
     func setupDismissibleKeyboard() {
-        loginView.field1.delegate = self
-        loginView.field2.delegate = self
+        loginView.emailField.delegate = self
+        loginView.passwordField.delegate = self
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
@@ -80,3 +103,24 @@ extension LoginViewController: UITextFieldDelegate {
     }
 }
 
+extension LoginViewController {
+    func setupLoginButton() {
+        loginView.loginButton.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
+        loginView.loginButton.isEnabled = false
+        viewModel.onLoginFailed = {
+            
+            self.loginView.emailField.textColor = Colors.redText
+            self.loginView.emailField.layer.borderColor = Colors.redLayer.cgColor
+            
+            self.loginView.passwordField.textColor = Colors.redText
+            self.loginView.passwordField.layer.borderColor = Colors.redLayer.cgColor
+            
+            let alertController = GenericAlertController.presentWith(
+                title: "Erro ao realizar login",
+                message: "Endereço de email ou senha inválida",
+                actionTitle: "Tentar Novamente"
+            )
+            self.present(alertController, animated: true)
+        }
+    }
+}

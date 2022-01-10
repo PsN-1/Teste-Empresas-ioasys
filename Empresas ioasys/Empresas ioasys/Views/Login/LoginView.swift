@@ -15,10 +15,10 @@ class LoginView: UIView {
     lazy var companyLogo = buildCompanyLogo()
     lazy var welcomeView = WelcomeView()
     
-    lazy var field1 = GenericTextField(ofType: .email)
-    lazy var field2 = GenericTextField(ofType: .password)
+    lazy var emailField = GenericTextField(ofType: .email)
+    lazy var passwordField = GenericTextField(ofType: .password)
     
-    lazy var button = buildLoginButton()
+    lazy var loginButton = buildLoginButton()
     
     lazy var textView: UILabel = {
         let textView = UILabel()
@@ -45,9 +45,9 @@ class LoginView: UIView {
         addSubview(welcomeView)
         
         addSubview(textView)
-        addSubview(field1)
-        addSubview(field2)
-        addSubview(button)
+        addSubview(emailField)
+        addSubview(passwordField)
+        addSubview(loginButton)
 
         NSLayoutConstraint.activate([
             gradientView.topAnchor.constraint(equalTo: topAnchor),
@@ -73,20 +73,20 @@ class LoginView: UIView {
             textView.trailingAnchor.constraint(equalTo: loginView.trailingAnchor, constant: -24),
             textView.heightAnchor.constraint(equalToConstant: 20),
             
-            field1.heightAnchor.constraint(equalToConstant: 48),
-            field1.leadingAnchor.constraint(equalTo: loginView.leadingAnchor, constant: 25),
-            field1.trailingAnchor.constraint(equalTo: loginView.trailingAnchor, constant: -25),
-            field1.topAnchor.constraint(equalTo: textView.topAnchor, constant: 40),
+            emailField.heightAnchor.constraint(equalToConstant: 48),
+            emailField.leadingAnchor.constraint(equalTo: loginView.leadingAnchor, constant: 25),
+            emailField.trailingAnchor.constraint(equalTo: loginView.trailingAnchor, constant: -25),
+            emailField.topAnchor.constraint(equalTo: textView.topAnchor, constant: 40),
             
-            field2.heightAnchor.constraint(equalToConstant: 48),
-            field2.leadingAnchor.constraint(equalTo: loginView.leadingAnchor, constant: 25),
-            field2.trailingAnchor.constraint(equalTo: loginView.trailingAnchor, constant: -25),
-            field2.topAnchor.constraint(equalTo: field1.bottomAnchor, constant: 24),
+            passwordField.heightAnchor.constraint(equalToConstant: 48),
+            passwordField.leadingAnchor.constraint(equalTo: loginView.leadingAnchor, constant: 25),
+            passwordField.trailingAnchor.constraint(equalTo: loginView.trailingAnchor, constant: -25),
+            passwordField.topAnchor.constraint(equalTo: emailField.bottomAnchor, constant: 24),
             
-            button.topAnchor.constraint(equalTo: field2.bottomAnchor, constant: 30),
-            button.leadingAnchor.constraint(equalTo: loginView.leadingAnchor, constant: 24),
-            button.trailingAnchor.constraint(equalTo: loginView.trailingAnchor, constant: -24),
-            button.heightAnchor.constraint(equalToConstant: 48)
+            loginButton.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 30),
+            loginButton.leadingAnchor.constraint(equalTo: loginView.leadingAnchor, constant: 24),
+            loginButton.trailingAnchor.constraint(equalTo: loginView.trailingAnchor, constant: -24),
+            loginButton.heightAnchor.constraint(equalToConstant: 48)
         ])
     }
 }
