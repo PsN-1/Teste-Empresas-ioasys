@@ -49,6 +49,7 @@
 		66B97760278B99F400195571 /* UrlPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B9775F278B99F400195571 /* UrlPath.swift */; };
 		66C87333278C722D00FA2B19 /* SearchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C87332278C722D00FA2B19 /* SearchHandler.swift */; };
 		66C87335278C729500FA2B19 /* BaseHandler.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C87334278C729500FA2B19 /* BaseHandler.swift.swift */; };
+		66C87337278C906A00FA2B19 /* ImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C87336278C906A00FA2B19 /* ImageHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		66B9775F278B99F400195571 /* UrlPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlPath.swift; sourceTree = "<group>"; };
 		66C87332278C722D00FA2B19 /* SearchHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHandler.swift; sourceTree = "<group>"; };
 		66C87334278C729500FA2B19 /* BaseHandler.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHandler.swift.swift; sourceTree = "<group>"; };
+		66C87336278C906A00FA2B19 /* ImageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -358,6 +360,7 @@
 				66C87334278C729500FA2B19 /* BaseHandler.swift.swift */,
 				66AAD8AE278C645700319120 /* LoginHandler.swift */,
 				66C87332278C722D00FA2B19 /* SearchHandler.swift */,
+				66C87336278C906A00FA2B19 /* ImageHandler.swift */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				66450FBF27864C2F0027707A /* LoginView.swift in Sources */,
 				66450F82278649350027707A /* SceneDelegate.swift in Sources */,
 				66C87335278C729500FA2B19 /* BaseHandler.swift.swift in Sources */,
+				66C87337278C906A00FA2B19 /* ImageHandler.swift in Sources */,
 				6652813D2789EBB600C74184 /* CompanyDetailView.swift in Sources */,
 				66C87333278C722D00FA2B19 /* SearchHandler.swift in Sources */,
 				66450FC727865D810027707A /* GenericTextField.swift in Sources */,
@@ -704,6 +708,7 @@
 				INFOPLIST_FILE = "Empresas ioasys/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -731,6 +736,7 @@
 				INFOPLIST_FILE = "Empresas ioasys/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

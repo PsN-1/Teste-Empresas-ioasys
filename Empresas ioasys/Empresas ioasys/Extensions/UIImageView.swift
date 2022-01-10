@@ -2,21 +2,15 @@ import UIKit
 
 extension UIImageView {
     func load(url: String) {
-        self.image = reloadImage(url)
-    }
-    
-    private func reloadImage(_ url: String, _ retryCount: Int = 2) ->  UIImage {
-        if let cachedImage = CachedImages.shared.getImageFor(url: url) {
-            return cachedImage
-        }
+        let cachedImages = CachedImages.shared
+        let imageHandler = ImageHandler()
         
-        if retryCount > 0 {
-            let apiClient = ApiClient()
-            apiClient.doGetImage(for: url) {
-               _ = self.reloadImage(url, retryCount-1)
+        if cachedImages.isImageCachedFor(url: url) {
+            self.image = cachedImages.getImageFor(url: url)
+        } else {
+            imageHandler.getImage(url: url) { receivedImage in
+                self.image = receivedImage
             }
         }
-        
-        return UIImage()
     }
 }

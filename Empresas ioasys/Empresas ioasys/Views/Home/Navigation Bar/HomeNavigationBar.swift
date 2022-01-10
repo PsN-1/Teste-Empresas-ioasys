@@ -41,7 +41,6 @@ class HomeNavigationBar: UIView {
             title.trailingAnchor.constraint(equalTo: trailingAnchor),
             title.bottomAnchor.constraint(equalTo: searchBar.topAnchor),
             
-            searchBar.bottomAnchor.constraint(equalTo: bottomAnchor),
             searchBar.trailingAnchor.constraint(equalTo: trailingAnchor),
             searchBar.leadingAnchor.constraint(equalTo: leadingAnchor),
             searchBar.heightAnchor.constraint(equalToConstant: 48),

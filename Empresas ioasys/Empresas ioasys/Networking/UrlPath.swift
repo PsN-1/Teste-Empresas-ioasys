@@ -7,6 +7,7 @@ enum UrlPath {
     case companiesWithNameFilter
     case companiesIndexWithFilter
     case companyIndex
+    case image(url: String)
     
     var description: String {
         switch self {
@@ -16,6 +17,7 @@ enum UrlPath {
         case .companiesWithNameFilter: return "enterprises"
         case .companiesIndexWithFilter: return "enterprises"
         case .companyIndex: return "enterprises"
+        case .image(let url): return "\(url)"
         }
     }
 }

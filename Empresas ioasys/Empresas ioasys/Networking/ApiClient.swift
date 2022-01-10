@@ -1,8 +1,6 @@
 import UIKit
 
 class ApiClient {
-    private let baseURL = "https://empresas.ioasys.com.br/api"
-    private let apiVersion = "v1"
     private let session = URLSession.shared
     
     func doGet(forPath path: UrlPath, withHeader headers: [String:String]?, withParams params :[String:String]?,completionHandler: @escaping ((Data?, URLResponse?, Error?) -> Void)) {
@@ -33,14 +31,7 @@ class ApiClient {
         }
         task.resume()
     }
-    
-    func doGetImage(for url: String, completionHandler: @escaping (() -> Void)) {
-        let company = Enterprise(photo: url)
-        doGetImages(for: [company]) {
-            completionHandler()
-        }
-    }
-    
+
     func doGetImages(for companies: [Enterprise], completionHandler: @escaping (() -> Void)) {
         let dispatchGroup = DispatchGroup()
         let imagesUrls = companies.map( { $0.photo })

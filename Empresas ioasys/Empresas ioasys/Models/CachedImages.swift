@@ -2,7 +2,6 @@ import UIKit
 
 class CachedImages {
     static let shared = CachedImages()
-
     private let cache = NSCache<NSString, UIImage>()
 
     func saveToCache(image: UIImage, for url: String) {
@@ -16,5 +15,10 @@ class CachedImages {
     func getImageFor(url: String) -> UIImage? {
         let imageUrl = NSString(string: url)
         return cache.object(forKey: imageUrl)
+    }
+    
+    func isImageCachedFor(url: String) -> Bool {
+        let imageUrl = NSString(string: url)
+        return (cache.object(forKey: imageUrl) != nil)
     }
 }
