@@ -38,7 +38,8 @@ class CompanyDetailView: UIView {
             
             title.centerXAnchor.constraint(equalTo: navigationBar.centerXAnchor),
             title.centerYAnchor.constraint(equalTo: navigationBar.centerYAnchor, constant: 10),
-            title.heightAnchor.constraint(equalToConstant: 30),
+            title.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.7),
+            title.heightAnchor.constraint(equalToConstant: 60),
             
             backButton.heightAnchor.constraint(equalToConstant: 40),
             backButton.widthAnchor.constraint(equalToConstant: 40),
@@ -70,6 +71,8 @@ class CompanyDetailView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "McDonnalds"
+        label.numberOfLines = 0
+        label.adjustsFontSizeToFitWidth = true
         label.textAlignment = .center
         label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: 24)
