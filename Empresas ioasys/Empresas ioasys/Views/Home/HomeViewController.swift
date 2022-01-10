@@ -12,6 +12,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UISearchControl
     override func loadView() {
         self.view = homeView
         setupCollectionView()
+        setupSearchBar()
     }
     
     override func viewDidLoad() {
@@ -65,6 +66,8 @@ extension HomeViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        let seachText = textField.text
+        viewModel.seachCompanyWith(seachText)
         return true
     }
     
@@ -73,3 +76,17 @@ extension HomeViewController: UITextFieldDelegate {
     }
 }
 
+extension HomeViewController {
+    func setupSearchBar() {
+        viewModel.didStartSearching = {
+            self.homeView.homeCollectionView?.isHidden = true
+            self.homeView.notFoundImage.isHidden = true
+            self.homeView.notFoundLabel.isHidden = true
+            self.homeView.activityIndicator.isHidden = false
+        }
+        
+        viewModel.didEndSearching = {
+            
+        }
+    }
+}

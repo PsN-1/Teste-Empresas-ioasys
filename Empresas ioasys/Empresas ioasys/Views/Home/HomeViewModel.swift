@@ -3,6 +3,8 @@ import UIKit
 
 class HomeViewModel {
     var companiesData: [Enterprise]?
+    var didStartSearching: (() -> Void)?
+    var didEndSearching: (() -> Void)?
     
     func getSectionsCount() -> Int {
         companiesData?.count ?? 0
@@ -19,4 +21,7 @@ class HomeViewModel {
         companiesData?[index] ?? Enterprise(id: 0, name: "", photo: "", description: "")
     }
     
+    func seachCompanyWith(_ text: String?) {
+        didStartSearching?()
+    }
 }
