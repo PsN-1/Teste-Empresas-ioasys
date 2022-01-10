@@ -19,10 +19,12 @@ class CompanyDetailViewController: UIViewController {
     }
     
     func setupView() {
-        companyDetailView.companyDescription.text = viewModel.getCompanyDescription()
-        companyDetailView.title.text = viewModel.getCompanyName()
-        companyDetailView.companyImage.load(url: viewModel.getCompanyImage())
+        let companyData = CompanyDetailView.DetailViewData(
+            companyDetailName: viewModel.getCompanyName(),
+            companyDetailImage: viewModel.getCompanyImage(),
+            companyDetailDescription: viewModel.getCompanyDescription())
         
+        companyDetailView.setupViewData(companyData)
         companyDetailView.backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
     }
     

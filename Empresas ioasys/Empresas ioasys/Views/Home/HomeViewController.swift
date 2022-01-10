@@ -86,7 +86,13 @@ extension HomeViewController {
         }
         
         viewModel.didEndSearching = {
+            let hideNotFound = !self.viewModel.showNotFound()
+            self.homeView.activityIndicator.isHidden = true
             
+            self.homeView.notFoundImage.isHidden = hideNotFound
+            self.homeView.notFoundLabel.isHidden = hideNotFound
+            self.homeView.homeCollectionView?.isHidden = !hideNotFound
+            self.homeView.homeCollectionView?.reloadData()
         }
     }
 }

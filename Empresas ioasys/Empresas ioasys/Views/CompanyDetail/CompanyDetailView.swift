@@ -1,11 +1,22 @@
 import UIKit
-import SwiftUI
 
 class CompanyDetailView: UIView {
+    struct DetailViewData {
+        var companyDetailName: String
+        var companyDetailImage: String
+        var companyDetailDescription: String
+    }
+    
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
         backgroundColor = .white
         setupView()
+    }
+    
+    func setupViewData(_ data: DetailViewData) {
+        companyDescription.text = data.companyDetailDescription
+        title.text = data.companyDetailName
+        companyImage.load(url: data.companyDetailImage)
     }
     
     required init?(coder: NSCoder) {

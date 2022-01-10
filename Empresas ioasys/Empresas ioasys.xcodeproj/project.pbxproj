@@ -51,6 +51,7 @@
 		66C87335278C729500FA2B19 /* BaseHandler.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C87334278C729500FA2B19 /* BaseHandler.swift.swift */; };
 		66C87337278C906A00FA2B19 /* ImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C87336278C906A00FA2B19 /* ImageHandler.swift */; };
 		66C87339278CA1E400FA2B19 /* GenericAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C87338278CA1E400FA2B19 /* GenericAlertController.swift */; };
+		66C8733B278CB46200FA2B19 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8733A278CB46200FA2B19 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		66C87334278C729500FA2B19 /* BaseHandler.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHandler.swift.swift; sourceTree = "<group>"; };
 		66C87336278C906A00FA2B19 /* ImageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHandler.swift; sourceTree = "<group>"; };
 		66C87338278CA1E400FA2B19 /* GenericAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericAlertController.swift; sourceTree = "<group>"; };
+		66C8733A278CB46200FA2B19 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +317,7 @@
 			children = (
 				66528148278AF69A00C74184 /* UIImage.swift */,
 				6652814C278B154900C74184 /* UIImageView.swift */,
+				66C8733A278CB46200FA2B19 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				665281342789C52F00C74184 /* HomeView.swift in Sources */,
 				66528145278A62CB00C74184 /* LoadingViewModel.swift in Sources */,
 				664F4CA927893BF60029442B /* HomeViewController.swift in Sources */,
+				66C8733B278CB46200FA2B19 /* String.swift in Sources */,
 				66450FC5278655A20027707A /* WelcomeView.swift.swift in Sources */,
 				66528147278A7B3B00C74184 /* CompanyDetailViewModel.swift in Sources */,
 				66AAD8AF278C645700319120 /* LoginHandler.swift in Sources */,
