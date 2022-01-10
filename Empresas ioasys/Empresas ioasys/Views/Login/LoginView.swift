@@ -74,8 +74,8 @@ class LoginView: UIView {
             loginButton.trailingAnchor.constraint(equalTo: loginView.trailingAnchor, constant: -24),
             loginButton.heightAnchor.constraint(equalToConstant: 48),
             
-            activityIndicator.centerXAnchor.constraint(equalTo: loginView.centerXAnchor),
-            activityIndicator.centerYAnchor.constraint(equalTo: loginView.centerYAnchor),
+            activityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
     }
 }
@@ -121,7 +121,7 @@ extension LoginView {
         indicator.translatesAutoresizingMaskIntoConstraints = false
         indicator.style = .large
         indicator.startAnimating()
-        indicator.color = .black
+        indicator.color = .white
         indicator.isHidden = true
         return indicator
     }

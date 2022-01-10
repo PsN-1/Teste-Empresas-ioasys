@@ -1,5 +1,4 @@
 import Foundation
-import SwiftUI
 
 class SearchHandler: BaseHandler {
     func getAllCompanies(completionHandler: @escaping ((EnterpriseModel) -> Void)) {
@@ -45,7 +44,7 @@ class SearchHandler: BaseHandler {
 
 extension SearchHandler {
     
-    func getData(forPath path: UrlPath, withHeader headers: [String:String]?, withParams params:[String:String]?, completionHandler: @escaping ((EnterpriseModel) -> Void)) {
+    private func getData(forPath path: UrlPath, withHeader headers: [String:String]?, withParams params:[String:String]?, completionHandler: @escaping ((EnterpriseModel) -> Void)) {
         
         apiClient.doGet(
             forPath: path,
@@ -56,7 +55,7 @@ extension SearchHandler {
             }
     }
     
-    func parse<jsonData: Codable>(json: Data, ofType type: jsonData.Type) throws -> jsonData {
+    private func parse<jsonData: Codable>(json: Data, ofType type: jsonData.Type) throws -> jsonData {
         let decoder = JSONDecoder()
         do {
             let jsonData: jsonData = try decoder.decode(jsonData.self, from: json)
@@ -67,7 +66,7 @@ extension SearchHandler {
         }
     }
     
-    func handleResponse(data: Data?, response: URLResponse?, error: Error?) -> EnterpriseModel {
+    private func handleResponse(data: Data?, response: URLResponse?, error: Error?) -> EnterpriseModel {
         if let httpResponse = response as? HTTPURLResponse {
             if httpResponse.statusCode == 200 {
                 if let dataResponse = data {

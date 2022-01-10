@@ -1,7 +1,7 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    let loginView = LoginView()
+    private let loginView = LoginView()
     var viewModel = LoginViewModel()
     
     override func loadView() {

@@ -48,25 +48,25 @@ class HomeViewModel {
 
 extension HomeViewModel {
     
-    func getAllCompanies() {
+    private func getAllCompanies() {
         searchHandler.getAllCompanies { companies in
             self.updateCompanies(companies.enterprises)
         }
     }
     
-    func getCompaniesById(_ id: String){
+    private func getCompaniesById(_ id: String){
         searchHandler.getCompaniesBy(Int(id) ?? 0) { companies in
             self.updateCompanies(companies.enterprises)
         }
     }
     
-    func getCompaniesByName(_ name: String) {
+    private func getCompaniesByName(_ name: String) {
         searchHandler.getCompaniesFilterBy(name) { companies in
             self.updateCompanies(companies.enterprises)
         }
     }
     
-    func getCompaniesByNameAndType(_ text: String) {
+    private func getCompaniesByNameAndType(_ text: String) {
         let name = text.splitLetters()
         let companyType = text.splitNumbers()
         
@@ -75,7 +75,7 @@ extension HomeViewModel {
         }
     }
     
-    func getCompaniesByType(_ text: String) {
+    private func getCompaniesByType(_ text: String) {
         let companyType = text.splitNumbers()
         
         searchHandler.getcompaniesBy(companyType: Int(companyType) ?? 0) { companies in
@@ -83,7 +83,7 @@ extension HomeViewModel {
         }
     }
     
-    func updateCompanies(_ companies: [Enterprise]) {
+    private func updateCompanies(_ companies: [Enterprise]) {
         DispatchQueue.main.async {
             self.companiesData = companies
             self.didEndSearching?()

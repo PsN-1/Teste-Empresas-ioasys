@@ -29,7 +29,7 @@ extension GenericTextField {
         setupLeftView()
     }
     
-    func setupTextFieldLayout() {
+    private func setupTextFieldLayout() {
         translatesAutoresizingMaskIntoConstraints = false
         layer.cornerRadius = 8
         layer.borderWidth = 1
@@ -43,14 +43,14 @@ extension GenericTextField {
                         ])
     }
     
-    func setupTextFieldType() {
+    private func setupTextFieldType() {
         isSecureTextEntry = (type == .password)
         keyboardType = type.keyboardType
         placeholder = type.placeholer
         returnKeyType = type.returnType
     }
     
-    func setupRightView() {
+    private func setupRightView() {
         let rightImageButton = UIButton(type: .custom)
         rightImageButton.setImage(UIImage(systemName: "eye"), for: .normal)
         rightImageButton.tintColor = .black
@@ -60,12 +60,12 @@ extension GenericTextField {
         rightView = rightImageButton
     }
     
-    @objc func eyeIconTapped() {
+    @objc private func eyeIconTapped() {
         rightImageTapped.toggle()
         isSecureTextEntry = rightImageTapped
     }
     
-    func setupLeftView() {
+    private func setupLeftView() {
         let leftImageButton = UIButton(type: .custom)
         leftImageButton.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
         leftImageButton.tintColor = .black

@@ -4,7 +4,7 @@ private let reuseIdentifier = "Cell"
 
 class HomeViewController: UIViewController, UISearchBarDelegate, UISearchControllerDelegate {
 
-    let homeView = HomeView()
+    private let homeView = HomeView()
     
     var viewModel = HomeViewModel()
     var onSelectedCompany: ((Enterprise) -> Void)?
@@ -77,7 +77,7 @@ extension HomeViewController: UITextFieldDelegate {
 }
 
 extension HomeViewController {
-    func setupSearchBar() {
+    private func setupSearchBar() {
         viewModel.didStartSearching = {
             self.homeView.homeCollectionView?.isHidden = true
             self.homeView.notFoundImage.isHidden = true

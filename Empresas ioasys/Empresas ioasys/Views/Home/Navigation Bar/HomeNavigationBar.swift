@@ -29,7 +29,7 @@ class HomeNavigationBar: UIView {
     
     lazy var searchBar = GenericTextField(ofType: .seach)
     
-    func setupView() {
+    private func setupView() {
         backgroundColor = .white
         addSubview(title)
         addSubview(searchBar)

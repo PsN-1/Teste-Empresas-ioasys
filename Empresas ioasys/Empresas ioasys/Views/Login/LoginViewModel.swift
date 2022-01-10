@@ -1,12 +1,12 @@
 import Foundation
 
 class LoginViewModel {
-    let apiHandler = LoginHandler()
+    private let apiHandler = LoginHandler()
     var onLoginSuccessful: (() -> Void)?
     var onLoginFailed: (() -> Void)?
+    var showLoadingIndicator: ((Bool) ->Void)?
     var login = ""
     var password = ""
-    var showLoadingIndicator: ((Bool) ->Void)?
     
     func tryLogin() {
         showLoadingIndicator?(true)

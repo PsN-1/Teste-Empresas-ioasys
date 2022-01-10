@@ -23,7 +23,7 @@ class CompanyDetailView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupView() {
+    private func setupView() {
         addSubview(navigationBar)
         addSubview(title)
         addSubview(backButton)

@@ -16,9 +16,7 @@ class ApiRequest {
     private let timeout: TimeInterval = 4
     private let userCredentials = User.shared
     
-    
     func buildRequest(with url: URL, forMethod method: ApiMethod, withHeaders headers: [String:String]?) -> URLRequest {
-        
         let autenticationHeaders = [
             "Content-Type": "application/json",
             "access-token": "\(userCredentials.accessToken ?? "")",
@@ -37,10 +35,10 @@ class ApiRequest {
     }
     
     func buildURL(url: UrlPath, withParams params: [String:String]?) -> URLComponents {
-        
         let urlPath = "\(baseURL)/\(apiVersion)/\(url.description)"
         var urlComponent = URLComponents(string: urlPath)!
         urlComponent.queryItems = params?.map( { URLQueryItem(name: $0.key, value: $0.value) })
+        
         return urlComponent
     }
 }
