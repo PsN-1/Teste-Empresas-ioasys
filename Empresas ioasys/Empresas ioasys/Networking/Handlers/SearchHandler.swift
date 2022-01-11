@@ -78,6 +78,6 @@ extension SearchHandler {
                 }
             }
         }
-        return EnterpriseModel(enterprises: [Enterprise()])
+        return EnterpriseModel(enterprises: [Enterprise]())
     }
 }
