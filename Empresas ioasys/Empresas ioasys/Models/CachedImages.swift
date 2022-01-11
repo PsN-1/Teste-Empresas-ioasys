@@ -16,9 +16,4 @@ class CachedImages {
         let imageUrl = NSString(string: url)
         return cache.object(forKey: imageUrl)
     }
-    
-    func isImageCachedFor(url: String) -> Bool {
-        let imageUrl = NSString(string: url)
-        return (cache.object(forKey: imageUrl) != nil)
-    }
 }

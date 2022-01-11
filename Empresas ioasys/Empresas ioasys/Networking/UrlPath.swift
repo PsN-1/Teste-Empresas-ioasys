@@ -1,6 +1,6 @@
 import Foundation
 
-enum UrlPath {
+enum UrlPath: Equatable {
     case loginPath
     case listCompanies
     case showByIdPath(id: Int)

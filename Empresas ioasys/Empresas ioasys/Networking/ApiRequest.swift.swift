@@ -33,7 +33,11 @@ class ApiRequest {
     }
     
     func buildURL(url: UrlPath, withParams params: [String:String]?) -> URLComponents {
-        let urlPath = "\(baseURL)/\(apiVersion)/\(url.description)"
+        var urlPath = "\(baseURL)/\(apiVersion)/\(url.description)"
+        if url == UrlPath.image(url: url.description) {
+            urlPath = "https://empresas.ioasys.com.br\(url.description)"
+        }
+        
         var urlComponent = URLComponents(string: urlPath)!
         urlComponent.queryItems = params?.map( { URLQueryItem(name: $0.key, value: $0.value) })
         
