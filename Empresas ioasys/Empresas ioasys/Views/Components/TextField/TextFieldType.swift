@@ -3,14 +3,14 @@ import UIKit
 enum TextFieldType {
     case email
     case password
-    case seach
+    case search
     case normal
     
-    var placeholer: String {
+    var placeholder: String {
         switch self {
         case .email: return "Email"
         case .password: return "Senha"
-        case .seach: return "Buscar..."
+        case .search: return "Buscar..."
         case .normal: return ""
         }
     }
@@ -18,7 +18,7 @@ enum TextFieldType {
     var keyboardType: UIKeyboardType {
         switch self {
         case .email: return .emailAddress
-        case .seach: return .webSearch
+        case .search: return .webSearch
         case .password, .normal: return .default
         }
     }
@@ -27,8 +27,16 @@ enum TextFieldType {
         switch self {
         case .email: return .next
         case .password: return .go
-        case .seach: return .search
+        case .search: return .search
         case .normal: return .default
+        }
+    }
+    
+    var errorMessage: String {
+        switch self {
+        case .email: return "Endereço de email inválido"
+        case .password: return "Senha inválida"
+        case .search, .normal: return ""
         }
     }
 }

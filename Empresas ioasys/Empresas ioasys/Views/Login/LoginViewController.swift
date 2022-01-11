@@ -19,8 +19,8 @@ class LoginViewController: UIViewController {
     @objc func loginButtonPressed() {
         view.endEditing(true)
         if validButton() {
-            viewModel.login = loginView.emailField.text ?? ""
-            viewModel.password = loginView.passwordField.text ?? ""
+            viewModel.login = loginView.emailField.genericTextField.text ?? ""
+            viewModel.password = loginView.passwordField.genericTextField.text ?? ""
             viewModel.tryLogin()
         }
     }
@@ -30,13 +30,41 @@ extension LoginViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderColor = Colors.purpleLayerBorder.cgColor
         textField.textColor = .black
+        
+        let isEmailField = textField == loginView.emailField.genericTextField
+        let isPassordField = textField == loginView.passwordField.genericTextField
+        
+        if isEmailField {
+            self.loginView.emailField.bottomLabel.isHidden = true
+            self.loginView.emailField.topLabel.textColor = .black
+        } else if isPassordField {
+            self.loginView.passwordField.bottomLabel.isHidden = true
+            self.loginView.passwordField.topLabel.textColor = .black
+        }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         textField.layer.borderColor = UIColor.black.cgColor
     }
+    
     func textFieldDidChangeSelection(_ textField: UITextField) {
         shouldEnableButton()
+        
+        let isEmailField = textField == loginView.emailField.genericTextField
+        let isPasswordField =  textField == loginView.passwordField.genericTextField
+        
+        let isNotEmpty = !(textField.text?.isEmpty ?? true)
+        let isEmpty = (textField.text?.isEmpty ?? true)
+        
+        if isEmailField && isNotEmpty {
+            loginView.emailField.topLabel.isHidden = false
+        } else if isPasswordField && isNotEmpty {
+            loginView.passwordField.topLabel.isHidden = false
+        } else if isEmailField && isEmpty {
+            loginView.emailField.topLabel.isHidden = true
+        } else if isPasswordField && isEmpty {
+            loginView.passwordField.topLabel.isHidden = true
+        }
     }
     
     func shouldEnableButton() {
@@ -50,7 +78,8 @@ extension LoginViewController: UITextFieldDelegate {
     }
     
     func validButton() -> Bool {
-        !(loginView.emailField.text?.isEmpty ?? true) && !(loginView.passwordField.text?.isEmpty ?? true)
+        !(loginView.emailField.genericTextField.text?.isEmpty ?? true)
+        && !(loginView.passwordField.genericTextField.text?.isEmpty ?? true)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -70,8 +99,8 @@ extension LoginViewController: UITextFieldDelegate {
     }
     
     func setupDismissibleKeyboard() {
-        loginView.emailField.delegate = self
-        loginView.passwordField.delegate = self
+        loginView.emailField.genericTextField.delegate = self
+        loginView.passwordField.genericTextField.delegate = self
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
@@ -109,18 +138,18 @@ extension LoginViewController {
         loginView.loginButton.isEnabled = false
         viewModel.onLoginFailed = {
             
-            self.loginView.emailField.textColor = Colors.redText
-            self.loginView.emailField.layer.borderColor = Colors.redLayer.cgColor
+            self.loginView.emailField.genericTextField.textColor = Colors.redText
+            self.loginView.emailField.genericTextField.layer.borderColor = Colors.redLayer.cgColor
             
-            self.loginView.passwordField.textColor = Colors.redText
-            self.loginView.passwordField.layer.borderColor = Colors.redLayer.cgColor
+            self.loginView.passwordField.genericTextField.textColor = Colors.redText
+            self.loginView.passwordField.genericTextField.layer.borderColor = Colors.redLayer.cgColor
             
-            let alertController = GenericAlertController.presentWith(
-                title: "Erro ao realizar login",
-                message: "Endereço de email ou senha inválida, por gentileza verificar.",
-                actionTitle: "Tentar Novamente"
-            )
-            self.present(alertController, animated: true)
+            self.loginView.emailField.bottomLabel.isHidden = false
+            self.loginView.passwordField.bottomLabel.isHidden = false
+            
+            self.loginView.emailField.topLabel.textColor = Colors.redText
+            self.loginView.passwordField.topLabel.textColor = Colors.redText
+            
         }
     }
 }

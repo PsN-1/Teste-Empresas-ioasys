@@ -46,7 +46,7 @@ extension GenericTextField {
     private func setupTextFieldType() {
         isSecureTextEntry = (type == .password)
         keyboardType = type.keyboardType
-        placeholder = type.placeholer
+        placeholder = type.placeholder
         returnKeyType = type.returnType
     }
     
@@ -70,18 +70,18 @@ extension GenericTextField {
         leftImageButton.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
         leftImageButton.tintColor = .black
         
-        leftViewMode = (type == .seach) ? .always : .never
+        leftViewMode = (type == .search) ? .always : .never
         leftView = leftImageButton
     }
 }
 
 extension GenericTextField {
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
-        let offset: CGFloat = (type == .seach) ? 48 : 16
+        let offset: CGFloat = (type == .search) ? 48 : 16
         return bounds.insetBy(dx: offset, dy: 12)
     }
     override func textRect(forBounds bounds: CGRect) -> CGRect {
-        let offset: CGFloat = (type == .seach) ? 48 : 16
+        let offset: CGFloat = (type == .search) ? 48 : 16
         return bounds.insetBy(dx: offset, dy: 12)
     }
     override func rightViewRect(forBounds bounds: CGRect) -> CGRect {

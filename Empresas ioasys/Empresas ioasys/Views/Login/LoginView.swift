@@ -15,8 +15,8 @@ class LoginView: UIView {
     lazy var companyLogo = buildCompanyLogo()
     lazy var welcomeView = WelcomeView()
     
-    lazy var emailField = GenericTextField(ofType: .email)
-    lazy var passwordField = GenericTextField(ofType: .password)
+    lazy var emailField = LoginTextField(ofType: .email)
+    lazy var passwordField = LoginTextField(ofType: .password)
     lazy var loginButton = buildLoginButton()
     lazy var textView = buildTextView()
     lazy var loginView = buildLoginView()
@@ -59,17 +59,17 @@ class LoginView: UIView {
             textView.trailingAnchor.constraint(equalTo: loginView.trailingAnchor, constant: -24),
             textView.heightAnchor.constraint(equalToConstant: 20),
             
-            emailField.heightAnchor.constraint(equalToConstant: 48),
+            emailField.heightAnchor.constraint(equalToConstant: 80),
             emailField.leadingAnchor.constraint(equalTo: loginView.leadingAnchor, constant: 25),
             emailField.trailingAnchor.constraint(equalTo: loginView.trailingAnchor, constant: -25),
-            emailField.topAnchor.constraint(equalTo: textView.topAnchor, constant: 40),
+            emailField.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 8),
             
-            passwordField.heightAnchor.constraint(equalToConstant: 48),
+            passwordField.heightAnchor.constraint(equalToConstant: 80),
             passwordField.leadingAnchor.constraint(equalTo: loginView.leadingAnchor, constant: 25),
             passwordField.trailingAnchor.constraint(equalTo: loginView.trailingAnchor, constant: -25),
-            passwordField.topAnchor.constraint(equalTo: emailField.bottomAnchor, constant: 24),
+            passwordField.topAnchor.constraint(equalTo: emailField.bottomAnchor, constant: 8),
             
-            loginButton.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 30),
+            loginButton.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 8),
             loginButton.leadingAnchor.constraint(equalTo: loginView.leadingAnchor, constant: 24),
             loginButton.trailingAnchor.constraint(equalTo: loginView.trailingAnchor, constant: -24),
             loginButton.heightAnchor.constraint(equalToConstant: 48),

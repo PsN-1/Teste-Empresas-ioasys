@@ -47,10 +47,11 @@
 		66AAD8AF278C645700319120 /* LoginHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AAD8AE278C645700319120 /* LoginHandler.swift */; };
 		66B9775E278B993E00195571 /* ApiRequest.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B9775D278B993E00195571 /* ApiRequest.swift.swift */; };
 		66B97760278B99F400195571 /* UrlPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B9775F278B99F400195571 /* UrlPath.swift */; };
+		66C02864278E2D03008030B7 /* TestButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C02863278E2D03008030B7 /* TestButtonViewController.swift */; };
+		66C02866278E3EE1008030B7 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C02865278E3EE1008030B7 /* LoginTextField.swift */; };
 		66C87333278C722D00FA2B19 /* SearchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C87332278C722D00FA2B19 /* SearchHandler.swift */; };
 		66C87335278C729500FA2B19 /* BaseHandler.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C87334278C729500FA2B19 /* BaseHandler.swift.swift */; };
 		66C87337278C906A00FA2B19 /* ImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C87336278C906A00FA2B19 /* ImageHandler.swift */; };
-		66C87339278CA1E400FA2B19 /* GenericAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C87338278CA1E400FA2B19 /* GenericAlertController.swift */; };
 		66C8733B278CB46200FA2B19 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8733A278CB46200FA2B19 /* String.swift */; };
 /* End PBXBuildFile section */
 
@@ -116,10 +117,11 @@
 		66AAD8AE278C645700319120 /* LoginHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHandler.swift; sourceTree = "<group>"; };
 		66B9775D278B993E00195571 /* ApiRequest.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift.swift; sourceTree = "<group>"; };
 		66B9775F278B99F400195571 /* UrlPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlPath.swift; sourceTree = "<group>"; };
+		66C02863278E2D03008030B7 /* TestButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestButtonViewController.swift; sourceTree = "<group>"; };
+		66C02865278E3EE1008030B7 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		66C87332278C722D00FA2B19 /* SearchHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHandler.swift; sourceTree = "<group>"; };
 		66C87334278C729500FA2B19 /* BaseHandler.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHandler.swift.swift; sourceTree = "<group>"; };
 		66C87336278C906A00FA2B19 /* ImageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHandler.swift; sourceTree = "<group>"; };
-		66C87338278CA1E400FA2B19 /* GenericAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericAlertController.swift; sourceTree = "<group>"; };
 		66C8733A278CB46200FA2B19 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -228,6 +230,7 @@
 			children = (
 				66450FB5278649E50027707A /* Coordinator.swift */,
 				66450FB7278649EF0027707A /* MainCoordinator.swift */,
+				66C02863278E2D03008030B7 /* TestButtonViewController.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -248,7 +251,6 @@
 			children = (
 				66450FBA27864B790027707A /* Images.swift */,
 				664FC355278B3C2A00177288 /* Colors.swift */,
-				66C87338278CA1E400FA2B19 /* GenericAlertController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -299,6 +301,7 @@
 			children = (
 				66450FC627865D810027707A /* GenericTextField.swift */,
 				664FC34E278B340D00177288 /* TextFieldType.swift */,
+				66C02865278E3EE1008030B7 /* LoginTextField.swift */,
 			);
 			path = TextField;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				66528149278AF69B00C74184 /* UIImage.swift in Sources */,
 				66450FB8278649EF0027707A /* MainCoordinator.swift in Sources */,
 				6652814D278B154A00C74184 /* UIImageView.swift in Sources */,
+				66C02864278E2D03008030B7 /* TestButtonViewController.swift in Sources */,
 				665281342789C52F00C74184 /* HomeView.swift in Sources */,
 				66528145278A62CB00C74184 /* LoadingViewModel.swift in Sources */,
 				664F4CA927893BF60029442B /* HomeViewController.swift in Sources */,
@@ -527,6 +531,7 @@
 				66450FC5278655A20027707A /* WelcomeView.swift.swift in Sources */,
 				66528147278A7B3B00C74184 /* CompanyDetailViewModel.swift in Sources */,
 				66AAD8AF278C645700319120 /* LoginHandler.swift in Sources */,
+				66C02866278E3EE1008030B7 /* LoginTextField.swift in Sources */,
 				66450FBF27864C2F0027707A /* LoginView.swift in Sources */,
 				66450F82278649350027707A /* SceneDelegate.swift in Sources */,
 				66C87335278C729500FA2B19 /* BaseHandler.swift.swift in Sources */,
@@ -537,7 +542,6 @@
 				664FC356278B3C2A00177288 /* Colors.swift in Sources */,
 				664F4CAB278940CE0029442B /* HomeViewCell.swift in Sources */,
 				66450FC127864E030027707A /* GradientView.swift in Sources */,
-				66C87339278CA1E400FA2B19 /* GenericAlertController.swift in Sources */,
 				664FC34F278B340D00177288 /* TextFieldType.swift in Sources */,
 				666898452787D53A003CE1AF /* ApiClient.swift in Sources */,
 				6652813F278A236B00C74184 /* User.swift in Sources */,
