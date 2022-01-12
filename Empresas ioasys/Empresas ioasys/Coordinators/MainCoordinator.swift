@@ -21,26 +21,26 @@ class MainCoordinator: Coordinator {
     
     func goToLoading() {
         let viewController = LoadingViewController()
-        viewController.viewModel.onLoadingComplete = { companies in
-            self.goToHome(with: companies)
+        viewController.viewModel.onLoadingComplete = { [weak self] companies in
+            self?.goToHome(with: companies)
         }
         navigationController.show(viewController, sender: self)
     }
     
     func goToHome(with companies: [Enterprise]) {
         let viewController = HomeViewController()
-        viewController.onSelectedCompany = { company in
-            self.goToCompanyDetail(for: company)
+        viewController.onSelectedCompany = { [weak self] company in
+            self?.goToCompanyDetail(for: company)
         }
-        viewController.viewModel.companiesData = companies
+        viewController.viewModel.setCompaniesDataTo(companies)
         navigationController.show(viewController, sender: self)
     }
     
     func goToCompanyDetail(for company: Enterprise) {
         let viewController = CompanyDetailViewController()
-        viewController.viewModel.company = company
-        viewController.onBackButtonPressed = {
-            self.navigationController.popViewController(animated: true)
+        viewController.viewModel.setCompanyTo(company)
+        viewController.onBackButtonPressed = { [weak self] in
+            self?.navigationController.popViewController(animated: true)
         }
         navigationController.show(viewController, sender: self)
     }

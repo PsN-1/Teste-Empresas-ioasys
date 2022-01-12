@@ -34,7 +34,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.getSectionsCount()
+        viewModel.numberOfSections
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -78,21 +78,21 @@ extension HomeViewController: UITextFieldDelegate {
 
 extension HomeViewController {
     private func setupSearchBar() {
-        viewModel.didStartSearching = {
-            self.homeView.homeCollectionView?.isHidden = true
-            self.homeView.notFoundImage.isHidden = true
-            self.homeView.notFoundLabel.isHidden = true
-            self.homeView.activityIndicator.isHidden = false
+        viewModel.didStartSearching = { [weak self] in
+            self?.homeView.homeCollectionView?.isHidden = true
+            self?.homeView.notFoundImage.isHidden = true
+            self?.homeView.notFoundLabel.isHidden = true
+            self?.homeView.activityIndicator.isHidden = false
         }
         
-        viewModel.didEndSearching = {
-            let hideNotFound = !self.viewModel.showNotFound()
-            self.homeView.activityIndicator.isHidden = true
+        viewModel.didEndSearching = { [weak self] in
+            let hideNotFound = !(self?.viewModel.showNotFoundImage)!
+            self?.homeView.activityIndicator.isHidden = true
             
-            self.homeView.notFoundImage.isHidden = hideNotFound
-            self.homeView.notFoundLabel.isHidden = hideNotFound
-            self.homeView.homeCollectionView?.isHidden = !hideNotFound
-            self.homeView.homeCollectionView?.reloadData()
+            self?.homeView.notFoundImage.isHidden = hideNotFound
+            self?.homeView.notFoundLabel.isHidden = hideNotFound
+            self?.homeView.homeCollectionView?.isHidden = !hideNotFound
+            self?.homeView.homeCollectionView?.reloadData()
         }
     }
 }

@@ -1,17 +1,21 @@
 import Foundation
 
 class CompanyDetailViewModel {
-    var company: Enterprise?
+     private var company: Enterprise?
     
-    func getCompanyImage() -> String {
-        company?.photo ?? ""
+    var companyImage: String {
+        get { company?.photo ?? "" }
     }
     
-    func getCompanyDescription() -> String {
-        company?.description ?? ""
+    var companyDescription: String {
+        get { company?.description ?? "" }
     }
     
-    func getCompanyName() -> String {
-        company?.name ?? ""
+    var companyName: String {
+        get { company?.name ?? "" }
+    }
+    
+    func setCompanyTo(_ company: Enterprise) {
+        self.company = company
     }
 }

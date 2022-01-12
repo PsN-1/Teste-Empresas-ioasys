@@ -18,9 +18,9 @@ class CompanyDetailViewController: UIViewController {
     
     func setupView() {
         let companyData = CompanyDetailView.DetailViewData(
-            companyDetailName: viewModel.getCompanyName(),
-            companyDetailImage: viewModel.getCompanyImage(),
-            companyDetailDescription: viewModel.getCompanyDescription()
+            companyDetailName: viewModel.companyName,
+            companyDetailImage: viewModel.companyImage,
+            companyDetailDescription: viewModel.companyDescription
         )
         
         companyDetailView.setupViewData(companyData)

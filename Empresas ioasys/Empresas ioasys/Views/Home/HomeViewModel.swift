@@ -3,16 +3,21 @@ import UIKit
 class HomeViewModel {
     private let searchHandler = SearchHandler()
     
-    var companiesData: [Enterprise]?
+    private var companiesData: [Enterprise]?
+    
     var didStartSearching: (() -> Void)?
     var didEndSearching: (() -> Void)?
     
-    func getSectionsCount() -> Int {
-        companiesData?.count ?? 0
+    var numberOfSections: Int {
+        get { companiesData?.count ?? 0 }
     }
     
-    func showNotFound() -> Bool {
-        companiesData?.isEmpty ?? true
+    var showNotFoundImage: Bool {
+        get { companiesData?.isEmpty ?? true }
+    }
+    
+    func setCompaniesDataTo(_ companies: [Enterprise]) {
+        companiesData = companies
     }
     
     func getCellDataFor(index: Int) -> HomeViewCell.HomeViewCellData {
@@ -49,20 +54,20 @@ class HomeViewModel {
 extension HomeViewModel {
     
     private func getAllCompanies() {
-        searchHandler.getAllCompanies { companies in
-            self.updateCompanies(companies.enterprises)
+        searchHandler.getAllCompanies { [weak self] companies in
+            self?.updateCompanies(companies.enterprises)
         }
     }
     
     private func getCompaniesById(_ id: String){
-        searchHandler.getCompaniesBy(Int(id) ?? 0) { companies in
-            self.updateCompanies(companies.enterprises)
+        searchHandler.getCompaniesBy(Int(id) ?? 0) { [weak self] companies in
+            self?.updateCompanies(companies.enterprises)
         }
     }
     
     private func getCompaniesByName(_ name: String) {
-        searchHandler.getCompaniesFilterBy(name) { companies in
-            self.updateCompanies(companies.enterprises)
+        searchHandler.getCompaniesFilterBy(name) { [weak self] companies in
+            self?.updateCompanies(companies.enterprises)
         }
     }
     
@@ -70,16 +75,16 @@ extension HomeViewModel {
         let name = text.splitLetters()
         let companyType = text.splitNumbers()
         
-        searchHandler.getCompaniesFilterBy(name, andCompanyType: Int(companyType) ?? 0) { companies in
-            self.updateCompanies(companies.enterprises)
+        searchHandler.getCompaniesFilterBy(name, andCompanyType: Int(companyType) ?? 0) { [weak self] companies in
+            self?.updateCompanies(companies.enterprises)
         }
     }
     
     private func getCompaniesByType(_ text: String) {
         let companyType = text.splitNumbers()
         
-        searchHandler.getcompaniesBy(companyType: Int(companyType) ?? 0) { companies in
-            self.updateCompanies(companies.enterprises)
+        searchHandler.getcompaniesBy(companyType: Int(companyType) ?? 0) { [weak self] companies in
+            self?.updateCompanies(companies.enterprises)
         }
     }
     
