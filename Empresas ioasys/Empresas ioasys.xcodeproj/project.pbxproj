@@ -41,7 +41,6 @@
 		66528149278AF69B00C74184 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66528148278AF69A00C74184 /* UIImage.swift */; };
 		6652814B278AF74F00C74184 /* CachedImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6652814A278AF74F00C74184 /* CachedImages.swift */; };
 		6652814D278B154A00C74184 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6652814C278B154900C74184 /* UIImageView.swift */; };
-		66542FF3278E76E600E6C659 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66542FF2278E76E600E6C659 /* Constraints.swift */; };
 		6660808A27885A1B008C3FF7 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6660808927885A1B008C3FF7 /* LoginModel.swift */; };
 		6660808C2788673E008C3FF7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6660808B2788673E008C3FF7 /* LoginViewModel.swift */; };
 		666898452787D53A003CE1AF /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666898442787D53A003CE1AF /* ApiClient.swift */; };
@@ -112,7 +111,6 @@
 		66528148278AF69A00C74184 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		6652814A278AF74F00C74184 /* CachedImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImages.swift; sourceTree = "<group>"; };
 		6652814C278B154900C74184 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
-		66542FF2278E76E600E6C659 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		6660808927885A1B008C3FF7 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		6660808B2788673E008C3FF7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		666898442787D53A003CE1AF /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
@@ -175,7 +173,6 @@
 		66450F7E278649350027707A /* Empresas ioasys */ = {
 			isa = PBXGroup;
 			children = (
-				66450F8D278649390027707A /* Info.plist */,
 				66450FB1278649790027707A /* Coordinators */,
 				664FC354278B3C1300177288 /* Extensions */,
 				6660808827885A07008C3FF7 /* Models */,
@@ -219,6 +216,7 @@
 		66450FB0278649670027707A /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
+				66450F8D278649390027707A /* Info.plist */,
 				66450F7F278649350027707A /* AppDelegate.swift */,
 				66450F81278649350027707A /* SceneDelegate.swift */,
 				66450F88278649390027707A /* Assets.xcassets */,
@@ -323,7 +321,6 @@
 				66528148278AF69A00C74184 /* UIImage.swift */,
 				6652814C278B154900C74184 /* UIImageView.swift */,
 				66C8733A278CB46200FA2B19 /* String.swift */,
-				66542FF2278E76E600E6C659 /* Constraints.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -529,7 +526,6 @@
 				66C02864278E2D03008030B7 /* TestButtonViewController.swift in Sources */,
 				665281342789C52F00C74184 /* HomeView.swift in Sources */,
 				66528145278A62CB00C74184 /* LoadingViewModel.swift in Sources */,
-				66542FF3278E76E600E6C659 /* Constraints.swift in Sources */,
 				664F4CA927893BF60029442B /* HomeViewController.swift in Sources */,
 				66C8733B278CB46200FA2B19 /* String.swift in Sources */,
 				66450FC5278655A20027707A /* WelcomeView.swift.swift in Sources */,
@@ -721,7 +717,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B3X64R59PK;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Empresas ioasys/Info.plist";
+				INFOPLIST_FILE = "Empresas ioasys/Supporting/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -749,7 +745,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B3X64R59PK;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Empresas ioasys/Info.plist";
+				INFOPLIST_FILE = "Empresas ioasys/Supporting/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
