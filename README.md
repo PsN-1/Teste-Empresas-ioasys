@@ -35,4 +35,9 @@ Para as imagens da tela da home, foi utilizado um método para reduzir o tamanho
 3. abra o arquivo com a extensão .xcodeproj 
 4. pressione CMD+R
 
+Credenciais:
+
+email: testeapple@ioasys.com.br
+senha: 12341234
+
 obs: Esse projeto foi desenvolvido utilizado a versão do xcode 13.1, recomenda-se utilizar a mesma ou versão mais nova se disponível
