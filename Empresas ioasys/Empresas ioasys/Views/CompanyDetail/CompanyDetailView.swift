@@ -13,14 +13,20 @@ class CompanyDetailView: UIView {
         setupView()
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    lazy var backButton = buildBackButton()
+    lazy var title = buildTitleLabel()
+    lazy var navigationBar = buildNavigationBar()
+    lazy var companyImage = buildCompanyImage()
+    lazy var companyDescription = buildCompanyDescription()
+    
     func setupViewData(_ data: DetailViewData) {
         companyDescription.text = data.companyDetailDescription
         title.text = data.companyDetailName
         companyImage.load(url: data.companyDetailImage)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     private func setupView() {
@@ -57,17 +63,19 @@ class CompanyDetailView: UIView {
             companyDescription.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -47)
         ])
     }
-    
-    lazy var backButton: UIButton = {
+}
+
+extension CompanyDetailView {
+    func buildBackButton() -> UIButton {
         let largeConfig = UIImage.SymbolConfiguration(pointSize: 18, weight: .semibold, scale: .large)
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "arrow.left", withConfiguration: largeConfig), for: .normal)
         button.tintColor = .white
         return button
-    }()
+    }
     
-    lazy var title: UILabel = {
+    func buildTitleLabel() -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "McDonnalds"
@@ -77,9 +85,9 @@ class CompanyDetailView: UIView {
         label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: 24)
         return label
-    }()
+    }
     
-    lazy var navigationBar: UIView = {
+    func buildNavigationBar() -> UIView {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         
@@ -96,27 +104,25 @@ class CompanyDetailView: UIView {
             backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-        
         return view
-    }()
+    }
     
-    lazy var companyImage: UIImageView = {
+    func buildCompanyImage() -> UIImageView {
        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.cornerRadius = 16
         imageView.clipsToBounds = true
         imageView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         return imageView
-    }()
+    }
     
-    lazy var companyDescription: UITextView = {
-       let textView = UITextView()
-        textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.font = UIFont.systemFont(ofSize: 16)
-        textView.backgroundColor = .white
-        textView.textColor = .black
-        textView.isScrollEnabled = true
-        return textView
-    }()
-    
+    func buildCompanyDescription() -> UITextView {
+        let textView = UITextView()
+         textView.translatesAutoresizingMaskIntoConstraints = false
+         textView.font = UIFont.systemFont(ofSize: 16)
+         textView.backgroundColor = .white
+         textView.textColor = .black
+         textView.isScrollEnabled = true
+         return textView
+    }
 }

@@ -1,8 +1,9 @@
 import UIKit
 
 class HomeViewModel {
-    private let searchHandler = SearchHandler()
+    typealias CellData = HomeViewCell.HomeViewCellData
     
+    private let searchHandler = SearchHandler()
     private var companiesData: [Enterprise]?
     
     var didStartSearching: (() -> Void)?
@@ -20,9 +21,9 @@ class HomeViewModel {
         companiesData = companies
     }
     
-    func getCellDataFor(index: Int) -> HomeViewCell.HomeViewCellData {
+    func getCellDataFor(index: Int) -> CellData {
         let company = companiesData?[index]
-        return HomeViewCell.HomeViewCellData(
+        return CellData(
             companyImage: company?.photo ?? "",
             companyName: company?.name ?? "")
     }

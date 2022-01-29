@@ -61,7 +61,6 @@ extension HomeViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         textField.layer.borderColor = UIColor.black.cgColor
-        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -86,7 +85,7 @@ extension HomeViewController {
         }
         
         viewModel.didEndSearching = { [weak self] in
-            let hideNotFound = !(self?.viewModel.showNotFoundImage)!
+            let hideNotFound = !(self?.viewModel.showNotFoundImage ?? true)
             self?.homeView.activityIndicator.isHidden = true
             
             self?.homeView.notFoundImage.isHidden = hideNotFound
