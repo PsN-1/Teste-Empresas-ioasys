@@ -32,11 +32,10 @@ class ApiClient {
         task.resume()
     }
 
-    func doGetImages(for companies: [Enterprise], completionHandler: @escaping (() -> Void)) {
+    func doGetImages(for companiesPhotos: [String], completionHandler: @escaping (() -> Void)) {
         let dispatchGroup = DispatchGroup()
-        let imagesUrls = companies.map( { $0.photo })
        
-        imagesUrls.forEach { imageUrl in
+        companiesPhotos.forEach { imageUrl in
             dispatchGroup.enter()
             if let url = URL(string: "https://empresas.ioasys.com.br\(imageUrl)") {
                 let task = session.dataTask(with: url) { data, response, error in

@@ -12,7 +12,7 @@ class HomeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let navigationBar = HomeNavigationBar()
+    lazy var navigationBar = HomeNavigationBar()
     lazy var notFoundImage = buildNotFoundImageView()
     lazy var notFoundLabel = buildNotFoundLabel()
     lazy var activityIndicator =  buildActivityIndicator()

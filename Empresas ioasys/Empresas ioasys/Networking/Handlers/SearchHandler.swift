@@ -50,7 +50,7 @@ extension SearchHandler {
             forPath: path,
             withHeader: headers,
             withParams: params) { data, response, error in
-                let json = self.handleResponse(data: data, response: response, error: error)
+                let json = self.handleResponse(data, response, error)
                 completionHandler(json)
             }
     }
@@ -58,6 +58,7 @@ extension SearchHandler {
     private func parse<jsonData: Codable>(json: Data, ofType type: jsonData.Type) throws -> jsonData {
         let decoder = JSONDecoder()
         do {
+            
             let jsonData: jsonData = try decoder.decode(jsonData.self, from: json)
             return jsonData
         } catch {
@@ -66,7 +67,7 @@ extension SearchHandler {
         }
     }
     
-    private func handleResponse(data: Data?, response: URLResponse?, error: Error?) -> EnterpriseModel {
+    private func handleResponse(_ data: Data?, _ response: URLResponse?, _ error: Error?) -> EnterpriseModel {
         if let httpResponse = response as? HTTPURLResponse {
             if httpResponse.statusCode == 200 {
                 if let dataResponse = data {

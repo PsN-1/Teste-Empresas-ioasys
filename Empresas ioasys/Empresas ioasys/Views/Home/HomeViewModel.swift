@@ -34,19 +34,31 @@ class HomeViewModel {
     
     func seachCompanyWith(_ text: String?) {
         didStartSearching?()
+        
         if let searchText = text?.removeDetails() {
             if searchText.isEmpty {
                 getAllCompanies()
-            } else if searchText.isNumbersOnly() {
+                return
+            }
+            
+            if searchText.isNumbersOnly() {
                 getCompaniesById(searchText)
-            } else if searchText.isLettersOnly() {
+                return
+            }
+            
+            if searchText.isLettersOnly() {
                 getCompaniesByName(searchText)
-            } else if searchText.contains("type") && searchText.hasNumbers() {
+                return
+            }
+            
+            if searchText.contains("type") && searchText.hasNumbers() {
                 getCompaniesByType(searchText)
-            } else if searchText.hasLetters() && searchText.hasNumbers() {
+                return
+            }
+            
+            if searchText.hasLetters() && searchText.hasNumbers() {
                 getCompaniesByNameAndType(searchText)
-            } else {
-                
+                return
             }
         }
     }

@@ -5,6 +5,7 @@ class CompanyDetailView: UIView {
         var companyDetailName: String
         var companyDetailImage: String
         var companyDetailDescription: String
+        var companyDetailSubtitle: String
     }
     
     override init(frame: CGRect = .zero) {
@@ -19,6 +20,7 @@ class CompanyDetailView: UIView {
     
     lazy var backButton = buildBackButton()
     lazy var title = buildTitleLabel()
+    lazy var subTitle = buildSubTitleLabel()
     lazy var navigationBar = buildNavigationBar()
     lazy var companyImage = buildCompanyImage()
     lazy var companyDescription = buildCompanyDescription()
@@ -26,12 +28,14 @@ class CompanyDetailView: UIView {
     func setupViewData(_ data: DetailViewData) {
         companyDescription.text = data.companyDetailDescription
         title.text = data.companyDetailName
+        subTitle.text = data.companyDetailSubtitle
         companyImage.load(url: data.companyDetailImage)
     }
     
     private func setupView() {
         addSubview(navigationBar)
         addSubview(title)
+        addSubview(subTitle)
         addSubview(backButton)
         addSubview(companyImage)
         addSubview(companyDescription)
@@ -45,7 +49,11 @@ class CompanyDetailView: UIView {
             title.centerXAnchor.constraint(equalTo: navigationBar.centerXAnchor),
             title.centerYAnchor.constraint(equalTo: navigationBar.centerYAnchor, constant: 10),
             title.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.7),
-            title.heightAnchor.constraint(equalToConstant: 60),
+            title.heightAnchor.constraint(equalToConstant: 40),
+            
+            subTitle.topAnchor.constraint(equalTo: title.bottomAnchor),
+            subTitle.centerXAnchor.constraint(equalTo: title.centerXAnchor),
+            subTitle.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.7),
             
             backButton.heightAnchor.constraint(equalToConstant: 40),
             backButton.widthAnchor.constraint(equalToConstant: 40),
@@ -75,15 +83,27 @@ extension CompanyDetailView {
         return button
     }
     
-    func buildTitleLabel() -> UILabel {
+    func buildGenericLabel() -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "McDonnalds"
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
         label.textAlignment = .center
         label.textColor = .white
+        return label
+    }
+    
+    func buildTitleLabel() -> UILabel {
+        let label = buildGenericLabel()
+        label.text = "McDonnalds"
         label.font = UIFont.boldSystemFont(ofSize: 24)
+        return label
+    }
+    
+    func buildSubTitleLabel() -> UILabel {
+        let label = buildGenericLabel()
+        label.text = "Food"
+        label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
     }
     

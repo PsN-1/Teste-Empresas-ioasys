@@ -15,6 +15,10 @@ class CompanyDetailViewModel {
         get { company?.name ?? "" }
     }
     
+    var companySubtitle: String {
+        get { company?.type.type ?? "" }
+    }
+    
     func setCompanyTo(_ company: Enterprise) {
         self.company = company
     }

@@ -5,13 +5,12 @@ extension UIImageView {
         let cachedImages = CachedImages.shared
         let imageHandler = ImageHandler()
 
-        if let cachedImage = cachedImages.getImageFor(url: url) {
+        if let cachedImage = cachedImages.getImageFor(url) {
             self.image = cachedImage
         } else {
             imageHandler.getImage(url: url) { receivedImage in
                 self.image = receivedImage
             }
         }
-
     }
 }

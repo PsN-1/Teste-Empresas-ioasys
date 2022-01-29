@@ -9,7 +9,7 @@ extension String {
     
     private func removeSpecialCharsFromString() -> String {
         let okayChars = Set("abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLKMNOPQRSTUVWXYZ1234567890")
-        return self.filter {okayChars.contains($0) }
+        return self.filter { okayChars.contains($0) }
     }
     
     func isNumbersOnly() -> Bool {

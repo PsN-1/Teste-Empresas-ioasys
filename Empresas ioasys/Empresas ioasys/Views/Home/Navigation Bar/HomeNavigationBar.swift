@@ -11,22 +11,7 @@ class HomeNavigationBar: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    lazy var title: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .white
-        label.textColor = UIColor(red: 0.154, green: 0.063, blue: 0.098, alpha: 1)
-        label.font = UIFont.boldSystemFont(ofSize: 40)
-        label.numberOfLines = 0
-        label.lineBreakMode = .byWordWrapping
-        label.text = "Test"
-                let paragraphStyle = NSMutableParagraphStyle()
-                paragraphStyle.lineHeightMultiple = 0.83
-        
-        label.attributedText = NSMutableAttributedString(string: "Pesquise por\numa empresa", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
-        return label
-    }()
-    
+    lazy var title = buildLabel()
     lazy var searchBar = GenericTextField(ofType: .search)
     
     private func setupView() {
@@ -47,5 +32,22 @@ class HomeNavigationBar: UIView {
             searchBar.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
         ])
     }
-    
+}
+
+extension HomeNavigationBar {
+    func buildLabel() -> UILabel {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.backgroundColor = .white
+        label.textColor = UIColor(red: 0.154, green: 0.063, blue: 0.098, alpha: 1)
+        label.font = UIFont.boldSystemFont(ofSize: 40)
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        label.text = "Test"
+                let paragraphStyle = NSMutableParagraphStyle()
+                paragraphStyle.lineHeightMultiple = 0.83
+        
+        label.attributedText = NSMutableAttributedString(string: "Pesquise por\numa empresa", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        return label
+    }
 }

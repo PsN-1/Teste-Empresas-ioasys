@@ -17,7 +17,8 @@ class LoadingViewModel {
     
     func getImagesForCompanies() {
         if let companies = companies {
-            apiClient.doGetImages(for: companies) {
+            let companyPhotosUrls = companies.map { $0.photo }
+            apiClient.doGetImages(for: companyPhotosUrls) {
                 self.onLoadingComplete?(companies)
             }
         }

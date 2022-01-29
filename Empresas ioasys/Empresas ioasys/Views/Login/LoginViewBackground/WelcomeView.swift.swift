@@ -57,5 +57,3 @@ extension WelcomeView {
         return label
     }
 }
-
-

@@ -3,6 +3,8 @@ import Foundation
 class LoginHandler: BaseHandler {
     
     func loginWith(loginData: LoginModel, completionHandler: @escaping ((LoginResponse) -> Void)) {
+        let statusCodeSuccess = 200
+        
         let json = [
             "email" : "\(loginData.login)",
             "password" : "\(loginData.password)"
@@ -17,7 +19,7 @@ class LoginHandler: BaseHandler {
             withBody: body) { data, response, error in
                 
                 if let httpResponse = response as? HTTPURLResponse {
-                    if httpResponse.statusCode == 200 {
+                    if httpResponse.statusCode == statusCodeSuccess {
                         self.saveUserCredentialsFrom(httpResponse)
                         completionHandler(.success)
                     } else {

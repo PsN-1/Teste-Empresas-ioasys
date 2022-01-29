@@ -45,9 +45,8 @@
 		6660808C2788673E008C3FF7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6660808B2788673E008C3FF7 /* LoginViewModel.swift */; };
 		666898452787D53A003CE1AF /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666898442787D53A003CE1AF /* ApiClient.swift */; };
 		66AAD8AF278C645700319120 /* LoginHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AAD8AE278C645700319120 /* LoginHandler.swift */; };
-		66B9775E278B993E00195571 /* ApiRequest.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B9775D278B993E00195571 /* ApiRequest.swift.swift */; };
+		66B9775E278B993E00195571 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B9775D278B993E00195571 /* ApiRequest.swift */; };
 		66B97760278B99F400195571 /* UrlPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B9775F278B99F400195571 /* UrlPath.swift */; };
-		66C02864278E2D03008030B7 /* TestButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C02863278E2D03008030B7 /* TestButtonViewController.swift */; };
 		66C02866278E3EE1008030B7 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C02865278E3EE1008030B7 /* LoginTextField.swift */; };
 		66C87333278C722D00FA2B19 /* SearchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C87332278C722D00FA2B19 /* SearchHandler.swift */; };
 		66C87335278C729500FA2B19 /* BaseHandler.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C87334278C729500FA2B19 /* BaseHandler.swift.swift */; };
@@ -115,9 +114,8 @@
 		6660808B2788673E008C3FF7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		666898442787D53A003CE1AF /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		66AAD8AE278C645700319120 /* LoginHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHandler.swift; sourceTree = "<group>"; };
-		66B9775D278B993E00195571 /* ApiRequest.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift.swift; sourceTree = "<group>"; };
+		66B9775D278B993E00195571 /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		66B9775F278B99F400195571 /* UrlPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlPath.swift; sourceTree = "<group>"; };
-		66C02863278E2D03008030B7 /* TestButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestButtonViewController.swift; sourceTree = "<group>"; };
 		66C02865278E3EE1008030B7 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		66C87332278C722D00FA2B19 /* SearchHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHandler.swift; sourceTree = "<group>"; };
 		66C87334278C729500FA2B19 /* BaseHandler.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHandler.swift.swift; sourceTree = "<group>"; };
@@ -230,7 +228,6 @@
 			children = (
 				66450FB5278649E50027707A /* Coordinator.swift */,
 				66450FB7278649EF0027707A /* MainCoordinator.swift */,
-				66C02863278E2D03008030B7 /* TestButtonViewController.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -240,7 +237,7 @@
 			children = (
 				66C87331278C720300FA2B19 /* Handlers */,
 				666898442787D53A003CE1AF /* ApiClient.swift */,
-				66B9775D278B993E00195571 /* ApiRequest.swift.swift */,
+				66B9775D278B993E00195571 /* ApiRequest.swift */,
 				66B9775F278B99F400195571 /* UrlPath.swift */,
 			);
 			path = Networking;
@@ -516,14 +513,13 @@
 				66450FBB27864B790027707A /* Images.swift in Sources */,
 				665281382789DEDD00C74184 /* CellGradientBackground.swift in Sources */,
 				66450F80278649350027707A /* AppDelegate.swift in Sources */,
-				66B9775E278B993E00195571 /* ApiRequest.swift.swift in Sources */,
+				66B9775E278B993E00195571 /* ApiRequest.swift in Sources */,
 				664FC358278B523600177288 /* HomeNavigationBar.swift in Sources */,
 				6660808A27885A1B008C3FF7 /* LoginModel.swift in Sources */,
 				6660808C2788673E008C3FF7 /* LoginViewModel.swift in Sources */,
 				66528149278AF69B00C74184 /* UIImage.swift in Sources */,
 				66450FB8278649EF0027707A /* MainCoordinator.swift in Sources */,
 				6652814D278B154A00C74184 /* UIImageView.swift in Sources */,
-				66C02864278E2D03008030B7 /* TestButtonViewController.swift in Sources */,
 				665281342789C52F00C74184 /* HomeView.swift in Sources */,
 				66528145278A62CB00C74184 /* LoadingViewModel.swift in Sources */,
 				664F4CA927893BF60029442B /* HomeViewController.swift in Sources */,

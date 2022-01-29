@@ -13,10 +13,16 @@ class MainCoordinator: Coordinator {
         goToLogin()
     }
     
+    func show(_ viewController: UIViewController) {
+        navigationController.show(viewController, sender: self)
+    }
+}
+
+extension MainCoordinator {
     func goToLogin() {
         let viewController = LoginViewController()
         viewController.viewModel.onLoginSuccessful = goToLoading
-        navigationController.show(viewController, sender: self)
+        show(viewController)
     }
     
     func goToLoading() {
@@ -24,7 +30,7 @@ class MainCoordinator: Coordinator {
         viewController.viewModel.onLoadingComplete = { [weak self] companies in
             self?.goToHome(with: companies)
         }
-        navigationController.show(viewController, sender: self)
+        show(viewController)
     }
     
     func goToHome(with companies: [Enterprise]) {
@@ -33,7 +39,7 @@ class MainCoordinator: Coordinator {
             self?.goToCompanyDetail(for: company)
         }
         viewController.viewModel.setCompaniesDataTo(companies)
-        navigationController.show(viewController, sender: self)
+        show(viewController)
     }
     
     func goToCompanyDetail(for company: Enterprise) {
@@ -42,7 +48,6 @@ class MainCoordinator: Coordinator {
         viewController.onBackButtonPressed = { [weak self] in
             self?.navigationController.popViewController(animated: true)
         }
-        navigationController.show(viewController, sender: self)
+        show(viewController)
     }
-    
 }
